@@ -133,3 +133,4 @@ def help(cmd):
         invite.root.print_screen("-ren oldName;newName -- modify file name")
         invite.root.print_screen("-addfold foldName -- create a new fold in the current path")
         invite.root.print_screen("-remfold foldName -- delete a folder in the current path")
+        invite.root.print_screen("-now -- print current date and hour")
