@@ -102,4 +102,20 @@ def remfold(cmd):
         fold_name = cmd[1]
         for arg in cmd[2:]:
             fold_name += ' ' + arg
-        shutil.rmtree(os.getcwd() + '/' + fold_name + '/')
+        try:
+            shutil.rmtree(os.getcwd() + '/' + fold_name + '/')
+        except FileNotFoundError:
+            invite.root.print_screen("[!] ERROR [!] Folder not found")
+
+def help(cmd):
+    if len(cmd) > 1:
+        invite.root.print_screen("[!] ERROR [!] COMMAND : help")
+    else:
+        invite.root.print_screen("Command list :")
+        invite.root.print_screen("-add fileExtension name -- to create a new file in the current path")
+        invite.root.print_screen("-rem fileName -- to delete a file in the current path")
+        invite.root.print_screen("-cd folderName -- change the current path")
+        invite.root.print_screen("-cdlist -- list all the element in the current path")
+        invite.root.print_screen("-ren oldName;newName -- modify file name")
+        invite.root.print_screen("-addfold foldName -- create a new fold in the current path")
+        invite.root.print_screen("-remfold foldName -- delete a folder in the current path")

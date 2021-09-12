@@ -41,6 +41,8 @@ class App(tk.Frame):
             commands.addfold(cmd)
         elif cmd[0] == 'remfold':
             commands.remfold(cmd)
+        elif cmd[0] == 'help':
+            commands.help(cmd)
         else:
             self.print_screen("[!] ERROR [!] Unknow command")
 
