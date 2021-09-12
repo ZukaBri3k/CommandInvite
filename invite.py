@@ -43,6 +43,10 @@ class App(tk.Frame):
             commands.remfold(cmd)
         elif cmd[0] == 'help':
             commands.help(cmd)
+        elif cmd[0] == 'now':
+            commands.now(cmd)
+        elif cmd[0] == 'quit':
+            commands.quit(cmd)
         else:
             self.print_screen("[!] ERROR [!] Unknow command")
 

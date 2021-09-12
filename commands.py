@@ -2,6 +2,7 @@ import os
 import invite
 import re
 import shutil
+import datetime
 
 def add(cmd):
     if len(cmd) < 3:
@@ -106,6 +107,19 @@ def remfold(cmd):
             shutil.rmtree(os.getcwd() + '/' + fold_name + '/')
         except FileNotFoundError:
             invite.root.print_screen("[!] ERROR [!] Folder not found")
+
+def now(cmd):
+    if len(cmd) > 1:
+        invite.root.print_screen("[!] ERROR [!] COMMAND : now")
+    else:
+        cur_time = datetime.datetime.now()
+        invite.root.print_screen(cur_time.strftime("%d %A, %B %Y - %H:%M:%S"))
+
+def quit(cmd):
+    if len(cmd) > 1:
+        invite.root.print_screen("[!] ERROR [!] COMMAND : quit")
+    else:
+        invite.root.quit()
 
 def help(cmd):
     if len(cmd) > 1:
